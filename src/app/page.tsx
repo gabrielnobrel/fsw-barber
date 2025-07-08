@@ -21,7 +21,7 @@ const Home = async () => {
     <>
       <Header />
       <div className="p-5">
-        <h2 className="text-xl font-bold">Olá, Felipe!</h2>
+        <h2 className="text-xl font-bold">Olá, Gabriel!</h2>
         <p>Quarta-feira, 02 de Julho</p>
 
         {/* Busca */}
