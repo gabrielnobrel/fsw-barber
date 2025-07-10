@@ -1,6 +1,6 @@
-import { Badge } from "lucide-react"
 import { Card, CardContent } from "./ui/card"
 import { Avatar, AvatarImage } from "./ui/avatar"
+import { Badge } from "./ui/badge"
 
 // TODO: receber agendamento como prop
 
