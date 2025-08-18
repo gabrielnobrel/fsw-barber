@@ -10,15 +10,15 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 
 interface BarbershopPageProps {
-  params: {
-    id: string
-  }
+  params: Promise<{ id: string }>
 }
 
 const BarbershopPage = async ({ params }: BarbershopPageProps) => {
+  const { id } = await params
+
   const barbershop = await db.barbershop.findUnique({
     where: {
-      id: params.id,
+      id: id,
     },
     include: {
       services: true,
