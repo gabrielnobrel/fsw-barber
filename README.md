@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FSW Barber
 
-## Getting Started
+Uma aplicação de agendamento para barbearias construída com Next.js e TypeScript. Este repositório contém a interface, autenticação e integração com banco de dados via Prisma.
 
-First, run the development server:
+### Descrição
+
+- Projeto criado para gerenciar barbearias, serviços e agendamentos de clientes.
+- Permite que clientes visualizem barbearias, escolham serviços, selecionem horários e confirmem reservas.
+
+### Principais Tecnologias
+
+- **Next.js** (React) - renderização híbrida e rotas.
+- **TypeScript** - tipagem estática.
+- **Prisma** - ORM para acesso ao banco de dados.
+- **NextAuth** - autenticação e sessões.
+- **Tailwind CSS** - estilização (configurada via PostCSS).
+- **React Hook Form** + **Zod** - formulários e validação.
+
+### Funcionalidades existentes
+
+- Listagem de barbearias e detalhe por barbearia.
+- Visualização e seleção de serviços.
+- Fluxo de criação e exclusão de reservas (bookings).
+- Autenticação via `next-auth`.
+- Dashboard/itens de UI reutilizáveis (componentes em `src/app/_components`).
+
+### Como executar (desenvolvimento)
+
+Pré-requisitos:
+
+- Node.js 18+ instalado
+- Um banco de dados (ex.: PostgreSQL, SQLite). Configure `DATABASE_URL`.
+
+Passos:
+
+1. Instalar dependências:
+
+```bash
+npm install
+```
+
+2. Gerar cliente Prisma (opcionalmente via `prepare`):
+
+```bash
+npx prisma generate
+# ou
+npm run prepare
+```
+
+3. Aplicar migrações e criar o banco de dados:
+
+```bash
+npx prisma migrate dev
+```
+
+4. Rodar seed (se desejar popular dados iniciais):
+
+```bash
+npx prisma db seed
+```
+
+5. Rodar em modo desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build e produção:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Variáveis de ambiente recomendadas:
 
-## Learn More
+- `DATABASE_URL` — string de conexão do banco
+- `NEXTAUTH_SECRET` — segredo para next-auth
+- `NEXTAUTH_URL` — URL base da aplicação (ex.: http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+### Estrutura principal do projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/app/` — rotas e páginas do Next.js
+- `src/app/_components/` — componentes reutilizáveis e UI
+- `src/app/_lib/` — utilitários, Prisma e autenticação
+- `prisma/` — esquema Prisma, migrations e seed
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Screenshots
 
-## Deploy on Vercel
+![Tela Inicial](./public/.github/Home.png)
+![Detalhe Barbearia](./public/.github/Barber.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Contribuição
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Contribuições são bem-vindas!
+
+### 👽Contato
+
+gabriel_nobresantos@hotmail.com
