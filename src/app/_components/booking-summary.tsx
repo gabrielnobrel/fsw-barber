@@ -17,7 +17,7 @@ const BookingSummary = ({
   return (
     <>
       <Card>
-        <CardContent className="space-y-3 p-3">
+        <CardContent className="">
           <div className="flex items-center justify-between">
             <h2 className="font-bold">{service.name}</h2>
             <p className="text-sm font-bold">

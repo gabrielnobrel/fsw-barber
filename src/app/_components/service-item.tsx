@@ -208,25 +208,17 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                   Reservar
                 </Button>
 
-                <SheetContent className="px-0">
+                <SheetContent className="overflow-y-auto">
                   <SheetHeader>
                     <SheetTitle>Fazer Reserva</SheetTitle>
                   </SheetHeader>
 
-                  <div className="border-b border-solid py-5">
+                  <div className="border-b border-solid">
                     <Calendar
                       mode="single"
                       locale={ptBR}
                       selected={selectedDay}
                       onSelect={handleDateSelect}
-                      classNames={{
-                        caption: "text-primary text-sm font-bold mb-2",
-                        head_cell: "capitalize text-xs text-gray-500",
-                        cell: "text-sm text-center",
-                        day: "h-10 w-10",
-                        nav_button_previous: "h-8 w-8",
-                        nav_button_next: "h-8 w-8",
-                      }}
                       disabled={(date) =>
                         isBefore(startOfDay(date), startOfDay(new Date()))
                       }
@@ -234,25 +226,27 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                   </div>
 
                   {selectedDay && (
-                    <div className="flex gap-3 overflow-x-auto border-b border-solid py-5 [&::-webkit-scrollbar]:hidden">
-                      {timeList.length > 0 ? (
-                        timeList.map((time) => (
-                          <Button
-                            key={time}
-                            variant={
-                              selectedTime === time ? "default" : "outline"
-                            }
-                            className="rounded-full"
-                            onClick={() => handleTimeSelect(time)}
-                          >
-                            {time}
-                          </Button>
-                        ))
-                      ) : (
-                        <p className="text-xs">
-                          Não há horários disponíveis para este dia
-                        </p>
-                      )}
+                    <div className="flex flex-col gap-4">
+                      <div className="flex w-full gap-3 overflow-x-auto overflow-y-hidden pb-3">
+                        {timeList.length > 0 ? (
+                          timeList.map((time) => (
+                            <Button
+                              key={time}
+                              variant={
+                                selectedTime === time ? "default" : "outline"
+                              }
+                              className="rounded-full"
+                              onClick={() => handleTimeSelect(time)}
+                            >
+                              {time}
+                            </Button>
+                          ))
+                        ) : (
+                          <p className="text-xs">
+                            Não há horários disponíveis para este dia
+                          </p>
+                        )}
+                      </div>
                     </div>
                   )}
 
