@@ -87,7 +87,7 @@ Variáveis de ambiente recomendadas:
 
 ### Screenshots
 
-<div style="display:flex;gap:8px;align-items:top;flex-wrap:wrap">
+<div style="display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap">
   <img src="./public/.github/Home.png" alt="Tela Inicial" style="width:320px;max-width:48%;border:1px solid #e5e7eb;border-radius:8px" />
   <img src="./public/.github/Barber.png" alt="Detalhe Barbearia" style="width:320px;max-width:48%;border:1px solid #e5e7eb;border-radius:8px" />
 </div>
